@@ -28,14 +28,11 @@ Edit
 
 Ensure you have Python 3.6+ installed. Then install the dependencies:
 
-```bash
-pip install face_recognition opencv-python numpy
+install face_recognition, opencv-python and numpy
 ⚠️ On Windows, face_recognition may require dlib with CMake and Visual Studio Build Tools installed.
 
-▶️ How to Run
-bash
-Copy
-Edit
+## ▶️ How to Run
+
 python recognizer.py
 The webcam will open.
 
@@ -45,7 +42,7 @@ If a known face is detected, the name will appear on the frame.
 
 Press q to close the video window and exit the script.
 
-🧠 How It Works
+## 🧠 How It Works
 Loads known face images from the faces/ directory.
 
 Encodes each known face using a 128-dimensional embedding.
@@ -58,7 +55,8 @@ Compares these encodings with the known encodings.
 
 If matched, displays the corresponding name on the screen.
 
-💡 Code Highlights
+##💡 Code Highlights
+
 python
 Copy
 Edit
@@ -67,14 +65,16 @@ face_distance = face_recognition.face_distance(known_face_encodings, face_encodi
 best_match_index = np.argmin(face_distance)
 if matches[best_match_index]:
     name = known_face_names[best_match_index]
-🔒 Limitations
+
+##🔒 Limitations
 Works best with good lighting and front-facing faces
 
 Accuracy may decrease for side faces or occlusions
 
 Faces not in the database will be ignored
 
-🚀 Future Improvements
+##🚀 Future Improvements
+
 Draw rectangles around faces
 
 Add face registration GUI
@@ -83,10 +83,11 @@ Store face encodings in a database or file
 
 Support for multiple camera feeds
 
-📄 License
+##📄 License
+
 This project is licensed under the MIT License. You are free to use, modify, and distribute it for personal or commercial use.
 
-🙌 Acknowledgements
+## 🙌 Acknowledgements
 face_recognition
 
 OpenCV
